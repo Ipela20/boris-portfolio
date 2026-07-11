@@ -1077,21 +1077,31 @@ padding:16px 30px;
 
     .work .box-container {
 
-        grid-template-columns:300px;
+        grid-template-columns: 1fr;
+
+        padding: 1rem;
+
+        gap: 20px;
 
     }
 
 
     .flip-card {
 
-        height:400px;
+        width: 100%;
+
+        max-width: 330px;
+
+        height: 390px;
+
+        margin: auto;
 
     }
 
 
     .box-img-wrap {
 
-        height:180px;
+        height: 170px;
 
     }
 
@@ -1685,3 +1695,31 @@ form .button-area {
 }
 
 
+@media(max-width:700px){
+
+    .education .box-container {
+
+        display:flex;
+
+        flex-direction:column;
+
+        width:100%;
+
+        padding:0;
+
+        margin:0;
+
+    }
+
+
+    .education .box-container .box {
+
+        width:100%;
+
+        max-width:100%;
+
+        margin:0 auto;
+
+    }
+
+}
