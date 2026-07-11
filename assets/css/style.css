@@ -834,6 +834,7 @@ padding:16px 30px;
 
 .work {
     background: linear-gradient(to bottom, #000031, #00002c);
+    padding-bottom: 5rem;
 }
 
 .work h2 {
@@ -849,19 +850,18 @@ padding:16px 30px;
 /* Conteneur des cartes */
 .work .box-container {
     display: grid;
-    grid-template-columns: repeat(3, 300px);
+    grid-template-columns: repeat(4, 300px);
     justify-content: center;
-    gap: 30px;
-    padding: 2rem 0;
+    column-gap: 25px;
+    row-gap: 20px;
+    padding: 1rem 0;
     width: 100%;
 }
 
-
 /* Carte */
 .flip-card {
-    width: 300px;
-    height: 440px;
-    perspective: 1200px;
+    width:300px;
+    height:410px;
 }
 
 
@@ -937,7 +937,7 @@ padding:16px 30px;
 /* Image projet */
 .box-img-wrap {
 
-    height:190px;
+    height:180px;
 
     background:#f8fafc;
 
