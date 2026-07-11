@@ -144,7 +144,6 @@ function showSkills(categories) {
 }
 
 // ===== PROJETS : cartes qui se retournent au survol =====
-// ===== PROJETS : cartes qui se retournent au survol =====
 function showProjects(projects) {
     let projectsContainer = document.querySelector("#work .box-container");
     let projectHTML = "";
@@ -293,16 +292,14 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeCvModal();
 });
 
-// Menu toggle (mobile)
-let menu = document.querySelector("#menu");
-let navbar = document.querySelector(".navbar");
-
-menu.onclick = () => {
-  menu.classList.toggle("fa-times");
-  navbar.classList.toggle("nav-toggle");
-};
-
-window.onscroll = () => {
-  menu.classList.remove("fa-times");
-  navbar.classList.remove("nav-toggle");
-};
+/* =====================================================================
+   APPARITION DOUCE DE LA PAGE AU CHARGEMENT
+   Le body démarre invisible (opacity:0, voir skills-categories.css)
+   et devient visible avec un fondu dès que le HTML est prêt, au lieu
+   d'un affichage "sec" instantané.
+===================================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+    requestAnimationFrame(() => {
+        document.body.classList.add('page-loaded');
+    });
+});
