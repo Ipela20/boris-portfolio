@@ -3,31 +3,61 @@
     "category": "Backend & Cloud",
     "categoryIcon": "fa-server",
     "items": [
-      { "name": "Node.js", "icon": "https://img.icons8.com/color/48/000000/nodejs.png" },
-      { "name": "Express", "icon": "https://img.icons8.com/ios-filled/50/000000/express-js.png" },
-      { "name": "Python", "icon": "https://img.icons8.com/color/48/000000/python--v1.png" },
-      { "name": "Flask", "icon": "https://img.icons8.com/officel/48/000000/flask.png" },
-      { "name": "FastAPI", "icon": "https://img.icons8.com/color/48/000000/api-settings.png" },
-      { "name": "MongoDB", "icon": "https://img.icons8.com/?size=100&id=74402&format=png&color=000000" },
-      { "name": "SQL", "icon": "https://img.icons8.com/color/48/000000/database.png" },
-      { "name": "DigitalOcean", "icon": "https://img.icons8.com/color/48/000000/digital-ocean.png" },
-      { "name": "Vercel", "icon": "https://img.icons8.com/color/48/000000/vercel.png" },
-      { "name": "Nginx", "icon": "https://img.icons8.com/color/48/000000/nginx.png" },
-      { "name": "Git", "icon": "https://img.icons8.com/color/48/000000/git.png" },
-      { "name": "GitHub", "icon": "https://img.icons8.com/glyph-neue/48/ffffff/github.png" }
-    ]
+{
+  "name": "Node.js",
+  "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+},
+{"name": "Express",
+  "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+},      { "name": "Python", "icon": "https://img.icons8.com/color/48/000000/python--v1.png" },
+{
+  "name": "Flask",
+  "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg"
+},      
+{ "name": "FastAPI", "icon": "https://img.icons8.com/color/48/000000/api-settings.png" },
+{
+  "name": "MongoDB",
+  "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+},      
+{ "name": "SQL", "icon": "https://img.icons8.com/color/48/000000/database.png" },
+{
+  "name": "DigitalOcean",
+  "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/digitalocean/digitalocean-original.svg"
+},      
+{ "name": "Vercel", "icon": "https://img.icons8.com/color/48/000000/vercel.png" },
+      
+{ "name": "Nginx", "icon": "https://img.icons8.com/color/48/000000/nginx.png" },
+{
+  "name": "Git",
+  "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+},
+{
+  "name": "GitHub",
+  "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+}    ]
+
   },
   {
     "category": "Mobile & Web",
     "categoryIcon": "fa-mobile-alt",
     "items": [
-      { "name": "React Native", "icon": "https://img.icons8.com/color/48/000000/react-native.png" },
-      { "name": "React Js", "icon": "https://img.icons8.com/?size=100&id=bzf0DqjXFHIW&format=png&color=000000" },
-      { "name": "Angular", "icon": "https://img.icons8.com/color/48/000000/angularjs.png" },
-      { "name": "Ionic", "icon": "https://img.icons8.com/color/48/000000/ionic.png" },
-      { "name": "TypeScript", "icon": "https://img.icons8.com/color/48/000000/typescript.png" },
-      { "name": "Tailwind CSS", "icon": "https://img.icons8.com/color/48/000000/tailwindcss.png" }
+    { "name": "React Native", "icon": "https://img.icons8.com/color/48/000000/react-native.png" },
+{
+  "name": "React Js",
+  "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+},
+{
+  "name": "Angular",
+  "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
+},      
+{ "name": "Ionic", "icon": "https://img.icons8.com/color/48/000000/ionic.png" },
+{
+  "name": "TypeScript",
+  "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+},      
+{ "name": "Tailwind CSS", "icon": "https://img.icons8.com/color/48/000000/tailwindcss.png" }
     ]
+
   },
   {
     "category": "IA",
