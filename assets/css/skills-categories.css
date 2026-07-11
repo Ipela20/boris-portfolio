@@ -581,15 +581,18 @@
 /* =====================================================================
    APPARITION DOUCE DE LA PAGE AU CHARGEMENT
    Le body est invisible par défaut ; la classe "page-loaded" (ajoutée
-   par script.js dès que le HTML est prêt) déclenche un fondu + léger
-   glissement vers le haut, pour remplacer l'affichage "sec" instantané.
+   par script.js dès que le HTML est prêt) déclenche un fondu.
+   IMPORTANT : on n'utilise PAS de "transform" sur le body — un
+   transform sur un ancêtre change le comportement des éléments en
+   "position: fixed" (comme le menu mobile ou le header), ce qui
+   cassait leur affichage et créait un scroll horizontal indésirable
+   sur mobile. Opacité seule = même effet visuel, sans ce risque.
 ===================================================================== */
 body {
   opacity: 0;
-  transform: translateY(10px);
+  overflow-x: hidden;
 }
 body.page-loaded {
   opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.6s ease;
 }
