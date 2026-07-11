@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Bingo",
+    "image": "bingo.png",
+    "desc": "Marketplace de commerce local pour le Burkina Faso : paiement Orange Money, suivi de livraison GPS en temps réel (Socket.io + Mapbox), gestion multi-boutiques et couche ERP pour les commerçants. Trois applications — client, livreur, backend — déployées en production.",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Gor AI",
+    "image": "gor.png",
+    "desc": "Système d'IA de détection automatique de contenus haineux sur les réseaux sociaux, adapté au contexte burkinabè : architecture multimodale combinant CamemBERT (texte), ResNet-50 (image) et Whisper (audio), intégrée à une plateforme web de modération en temps réel. Conçu chez Tech Pôle Expertise.",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Smart Apic",
+    "image": "smart_apic.png",
+    "desc": "Ruche intelligente combinant IoT et IA pour améliorer la production apicole et la santé des abeilles : caméra, pesée (ESP32 + balance BLE), capteurs de température/humidité, système de chauffage et application mobile. Développé à l'Orange Digital Center lors de l'Orange Summer Challenge.",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Inès AI",
+    "image": "ines-ai.png",
+    "desc": "Secrétaire IA fonctionnant entièrement hors ligne sous Windows : LLM local (Mistral 7B via Ollama), mémoire vectorielle ChromaDB, transcription de réunions par Whisper. Aucune donnée ne quitte la machine.",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "DJESS",
+    "image": "djess.png",
+    "desc": "Plateforme de streaming dédiée aux films et séries africains : catalogue, lecture vidéo en ligne et gestion des contenus. Une vitrine numérique pour faire rayonner le cinéma du continent.",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "DISTRI JOY",
+    "image": "distri.png",
+    "desc": "Distributeur automatique de jus locaux piloté par ESP32, conçu et réalisé lors d'un stage chez TANGA GROUP : de la conception électronique au prototype fonctionnel.",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Human House",
+    "image": "human.png",
+    "desc": "Tente transportable à énergie autonome, équipée de technologies de collecte de données, conçue pour améliorer la prise en charge des personnes déplacées internes en offrant un logement temporaire digne.",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "category": "Backend & Cloud",
+    "categoryIcon": "fa-server",
+    "items": [
+      { "name": "Node.js", "icon": "https://img.icons8.com/color/48/000000/nodejs.png" },
+      { "name": "Express", "icon": "https://img.icons8.com/ios-filled/50/000000/express-js.png" },
+      { "name": "Python", "icon": "https://img.icons8.com/color/48/000000/python--v1.png" },
+      { "name": "Flask", "icon": "https://img.icons8.com/officel/48/000000/flask.png" },
+      { "name": "FastAPI", "icon": "https://img.icons8.com/color/48/000000/api-settings.png" },
+      { "name": "MongoDB", "icon": "https://img.icons8.com/?size=100&id=74402&format=png&color=000000" },
+      { "name": "SQL", "icon": "https://img.icons8.com/color/48/000000/database.png" },
+      { "name": "DigitalOcean", "icon": "https://img.icons8.com/color/48/000000/digital-ocean.png" },
+      { "name": "Vercel", "icon": "https://img.icons8.com/color/48/000000/vercel.png" },
+      { "name": "Nginx", "icon": "https://img.icons8.com/color/48/000000/nginx.png" },
+      { "name": "Git", "icon": "https://img.icons8.com/color/48/000000/git.png" },
+      { "name": "GitHub", "icon": "https://img.icons8.com/glyph-neue/48/ffffff/github.png" }
+    ]
+  },
+  {
+    "category": "Mobile & Web",
+    "categoryIcon": "fa-mobile-alt",
+    "items": [
+      { "name": "React Native", "icon": "https://img.icons8.com/color/48/000000/react-native.png" },
+      { "name": "React Js", "icon": "https://img.icons8.com/?size=100&id=bzf0DqjXFHIW&format=png&color=000000" },
+      { "name": "Angular", "icon": "https://img.icons8.com/color/48/000000/angularjs.png" },
+      { "name": "Ionic", "icon": "https://img.icons8.com/color/48/000000/ionic.png" },
+      { "name": "TypeScript", "icon": "https://img.icons8.com/color/48/000000/typescript.png" },
+      { "name": "Tailwind CSS", "icon": "https://img.icons8.com/color/48/000000/tailwindcss.png" }
+    ]
+  },
+  {
+    "category": "IA",
+    "categoryIcon": "fa-brain",
+    "items": [
+      { "name": "Ollama / LLM locaux", "icon": "https://img.icons8.com/color/48/000000/artificial-intelligence.png" },
+      { "name": "NLP / Vision / Audio", "icon": "https://img.icons8.com/color/48/000000/brain.png" },
+      { "name": "CamemBERT", "icon": "https://img.icons8.com/color/48/000000/document.png" },
+      { "name": "ResNet-50", "icon": "https://img.icons8.com/color/48/000000/visible.png" },
+      { "name": "Whisper", "icon": "https://img.icons8.com/color/48/000000/microphone.png" },
+      { "name": "ChromaDB / Qdrant", "icon": "https://img.icons8.com/color/48/000000/database.png" }
+    ]
+  },
+  {
+    "category": "IoT & Électronique",
+    "categoryIcon": "fa-microchip",
+    "items": [
+      { "name": "ESP32", "icon": "https://img.icons8.com/color/48/000000/processor.png" },
+      { "name": "Arduino", "icon": "https://img.icons8.com/color/48/000000/arduino.png" },
+      { "name": "Raspberry Pi", "icon": "https://img.icons8.com/color/48/000000/raspberry-pi.png" },
+      { "name": "C / C++", "icon": "https://img.icons8.com/color/48/000000/c-plus-plus-logo.png" },
+      { "name": "BLE / Capteurs", "icon": "https://img.icons8.com/color/48/000000/bluetooth.png" },
+      { "name": "Proteus / EasyEDA", "icon": "https://img.icons8.com/color/48/000000/circuit.png" }
+    ]
+  }
+]

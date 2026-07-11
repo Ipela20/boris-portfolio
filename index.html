@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Boris Igor BALIMA</title>
+  <link rel="icon" id="favicon" href="assets/images/favicon.png" type="image/png" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS du projet : ADAPTE le nom de fichier si besoin (dir assets/css) -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/skills-categories.css" />
+  <link rel="stylesheet" href="assets/css/home-redesign.css" />
+
+  <link rel="preload"
+href="assets/images/profil.jpeg"
+as="image">
+
+<link rel="preload"
+href="assets/images/profil2.jpeg"
+as="image">
+</head>
+<body>
+
+  <!-- ===== BOUTON RETOUR EN HAUT ===== -->
+  <a href="#home" id="scroll-top"><i class="fas fa-angle-up"></i></a>
+
+  <!-- ===== HEADER / NAVBAR ===== -->
+  <header class="header">
+    <a href="#home" class="logo">Boris<span> Igor</span> <span> BALIMA</span></a>
+
+    <nav class="navbar">
+      <ul>
+        <li><a href="#home" class="active">Accueil</a></li>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#skills">Compétences</a></li>
+        <li><a href="#education">Formation</a></li>
+        <li><a href="#work">Projets</a></li>
+        <li><a href="#experience">Expérience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div id="menu" class="fas fa-bars"></div>
+  </header>
+
+  <!-- ===== HOME / HERO ===== -->
+  <section class="home" id="home">
+    <div id="particles-js"></div>
+
+    <div class="home-inner">
+      <div class="content">
+        <h3>Bonjour, je suis <span class="accent">Boris Igor BALIMA</span></h3>
+        <p class="home-subtitle">Je suis <span class="typing-text"></span></p>
+        <a href="#about" class="btn home-cta"><span>À propos de moi</span> <i class="fas fa-arrow-down"></i></a>
+      </div>
+
+      <div class="home-socials">
+        <a href="https://www.linkedin.com/in/boris-igor-balima-614234248?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/yoigor226" class="github" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about">
+    <h2 class="heading"><i class="fas fa-user-circle" style="color:#7303a7; margin-right: 1rem;"></i>À propos <span>de moi</span></h2>
+
+    <div class="row">
+      <div class="image">
+        <img src="assets/images/profil.jpeg" alt="à propos" />
+      </div>
+
+      <div class="content">
+        <h3>Bâtisseur, de bout en bout</h3>
+        <span class="tag">Ingénieur de conception de systèmes numériques</span>
+        <p>
+          Diplômé Ingénieur de Conception de Systèmes Numériques (ISGE-BF), avec une solide
+          base en développement web, mobile et systèmes embarqués. Formation complémentaire
+          en intelligence artificielle et IoT, à travers la réalisation de projets concrets
+        du prototype électronique au déploiement en production. Passionné par l'IA, l'IoT
+          et l'innovation locale, je suis prêt à relever de nouveaux défis professionnels.
+        </p>
+
+        <div class="box-container">
+          <div class="box">
+              <p>
+                  <i class="fas fa-envelope"></i>
+                  <span>Email</span>
+                  <a href="mailto:borisigorbalima@gmail.com"> borisigorbalima@gmail.com</a>
+              </p>
+            </div>
+          <div class="box">
+              <p>
+                  <i class="fas fa-phone"></i>
+                  <span>Téléphone</span>
+                  <a href="tel:+22671773129">+226 71 77 31 29</a>
+              </p>
+          </div>
+        </div>
+
+        <p style="margin-top: 2rem; font-style: italic; opacity: 0.85; font-size: 1.5rem;">
+          « Faire du Burkina Faso une référence tech en Afrique. »
+        </p>
+
+        
+        <div class="resumebtn">
+          <a href="#" class="btn open-cv-modal"><span>Voir mon CV</span> <i class="fas fa-file-pdf"></i></a>
+          <a href="#contact" class="btn"><span>Me contacter</span> <i class="fas fa-paper-plane"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="skills" id="skills">
+    <h2 class="heading"><i class="fas fa-laptop-code"></i>Compétences<span>  & Capacités</span></h2>
+
+    <div class="container">
+      <div class="row" id="skillsContainer">
+        <!-- Rempli dynamiquement par script.js via skills.json -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section class="education" id="education">
+    <h2 class="heading"><i class="fas fa-graduation-cap"></i>Mon <span>Parcours</span></h2>
+    <div class="box-container">
+      <div class="box">
+        <div class="image">
+          <img src="assets/images/educat/isge.png" alt="ISGE-BF" />
+        </div>
+        <div class="content">
+          <h3>Ingénieur de conception de systèmes numériques</h3>
+          <p><i class="fas fa-calendar"></i> 2023 - 2025</p>
+          <p><i class="fas fa-school"></i> ISGE-BF</p>
+        </div>
+        <h4><i class="fas fa-check-circle"></i> Obtenu</h4>
+      </div>
+
+      <div class="box">
+        <div class="image">
+          <img src="assets/images/educat/isge.png" alt="Électricité industrielle" />
+        </div>
+        <div class="content">
+          <h3>Électricité industrielle</h3>
+          <p><i class="fas fa-calendar"></i> 2020 - 2022</p>
+          <p><i class="fas fa-school"></i> ISGE-BF</p>
+        </div>
+        <h4><i class="fas fa-check-circle"></i> Obtenu</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WORK / PROJECTS ===== -->
+  <section class="work" id="work">
+    <h2 class="heading"><i class="fas fa-layer-group"></i>Mes <span>Projets</span></h2>
+
+    <div class="box-container">
+      <!-- Rempli dynamiquement par script.js via projects/projects.json -->
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section class="experience" id="experience">
+    <h2 class="heading"><i class="fas fa-briefcase"></i>Mon <span>Expérience</span></h2>
+
+    <div class="timeline">
+
+      <div class="container left">
+        <div class="content">
+          <div class="tag">
+            <i class="fas fa-briefcase"></i>
+            <h2>Aujourd'hui</h2>
+          </div>
+          <div class="desc">
+            <h3>Ingénieur Full-Stack</h3>
+            <p>Tech Pôle Expertise</p>
+            <p>Conception d'applications mobiles, web et backend pour des clients de la sous-région, de la spécification au déploiement en production.</p>
+            <div class="tech-tags">
+              <span>React Native</span>
+              <span>Node.js</span>
+              <span>MongoDB</span>
+            </div>
+            <button class="voir-plus-btn">Voir plus</button>
+            <div class="details" style="display:none;">
+              <p>Développement de la plateforme e-commerce + ERP Bingo et du système de modération IA multimodale, entre autres missions client.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container right">
+        <div class="content">
+          <div class="tag">
+            <i class="fas fa-solar-panel"></i>
+            <h2>Orange Summer Challenge(2024)</h2>
+          </div>
+          <div class="desc">
+            <h3>Porteur de projet — Smart Apic</h3>
+            <p>Orange Digital Center</p>
+            <p>Conception d'une ruche intelligente combinant IoT et IA pour améliorer la production apicole et la santé des abeilles.</p>
+            <div class="tech-tags">
+              <span>ESP32</span>
+              <span>BLE</span>
+              <span>C++</span>
+            </div>
+            <button class="voir-plus-btn">Voir plus</button>
+            <div class="details" style="display:none;">
+              <p>Caméra, pesée par balance BLE, capteurs de température/humidité, système de chauffage et application mobile de suivi.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container left">
+        <div class="content">
+          <div class="tag">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <h2>Depuis 2022</h2>
+          </div>
+          <div class="desc">
+            <h3>Formateur Arduino, ESP & IoT</h3>
+            <p>Meister Intelligent System</p>
+            <p>Accompagnement de jeunes Burkinabè dans la réalisation de leurs propres projets technologiques.</p>
+            <div class="tech-tags">
+              <span>Arduino</span>
+              <span>ESP32</span>
+              <span>IoT</span>
+            </div>
+            <button class="voir-plus-btn">Voir plus</button>
+            <div class="details" style="display:none;">
+              <p>Formation pratique aux capteurs, à l'électronique embarquée et à la programmation C/C++ pour des projets IoT concrets.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container right">
+        <div class="content">
+          <div class="tag">
+            <i class="fas fa-microchip"></i>
+            <h2>Stage</h2>
+          </div>
+          <div class="desc">
+            <h3>Électronique embarquée</h3>
+            <p>TANGA GROUP</p>
+            <p>Conception et réalisation d'un distributeur automatique de jus locaux piloté par ESP32, de l'électronique au prototype fonctionnel.</p>
+            <div class="tech-tags">
+              <span>ESP32</span>
+              <span>C/C++</span>
+              <span>Électronique</span>
+            </div>
+            <button class="voir-plus-btn">Voir plus</button>
+            <div class="details" style="display:none;">
+              <p>De la conception du circuit électronique au prototype final testé et fonctionnel.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+   
+<div class="morebtn">
+      <a href="#" class="btn open-cv-modal"><span>Voir tout mon CV</span> <i class="fas fa-file-pdf"></i></a>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <h2 class="heading">Me <span>contacter</span></h2>
+
+    <div class="container">
+      <div class="content">
+        <div class="image-box">
+          <img src="assets/images/profil2.jpeg" alt="contact" />
+        </div>
+
+        <form id="contact-form">
+          <div class="form-group">
+            <div class="field">
+              <input type="text" name="user_name" placeholder="Votre nom" required />
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="field">
+              <input type="email" name="user_email" placeholder="Votre email" required />
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="message">
+              <textarea name="message" placeholder="Votre message" required></textarea>
+              <i class="fas fa-comment-dots"></i>
+            </div>
+            <div class="button-area">
+              <button type="submit"><i class="fas fa-paper-plane"></i></button>
+              <span>Envoyer</span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="box-container">
+      <div class="box">
+        <h3>À propos</h3>
+        <p>Ingénieur de conception de systèmes numériques · Full-Stack · IA · IoT, basé à Ouagadougou, Burkina Faso.</p>
+        <div class="share">
+          <a href="https://www.linkedin.com/in/boris-igor-balima-614234248?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/yoigor226" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="box">
+        <h3>Liens rapides</h3>
+        <a href="#home">Accueil</a>
+        <a href="#about">À propos</a>
+        <a href="#skills">Compétences</a>
+        <a href="#work">Projets</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="box">
+        <h3>Contact</h3>
+        <p><i class="fas fa-envelope"></i> borisigorbalima@gmail.com</p>
+        <p><i class="fas fa-phone"></i> +226 71 77 31 29/ 66 90 00 08</p>
+        <p><i class="fas fa-map-marker-alt"></i> Ouagadougou, Burkina Faso</p>
+      </div>
+    </div>
+
+    <div class="credit">
+      &copy; 2026 Boris Igor BALIMA. Fait avec <i class="fa fa-heart"></i>
+    </div>
+  </footer>
+
+  <!-- ===== MODAL CV ===== -->
+  <div class="cv-modal" id="cvModal">
+    <div class="cv-modal-overlay"></div>
+    <div class="cv-modal-content">
+      <div class="cv-modal-header">
+        <h3><i class="fas fa-file-pdf"></i> Mon CV</h3>
+        <div class="cv-modal-actions">
+          <a href="https://drive.google.com/uc?export=download&id=1_g_m71RZKgI8G852rZWnqgtkyUTCzsSE" class="cv-download-link" target="_blank" rel="noopener">
+            <i class="fas fa-download"></i> Télécharger
+          </a>
+          <button class="cv-modal-close" aria-label="Fermer">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <iframe src="https://drive.google.com/file/d/1_g_m71RZKgI8G852rZWnqgtkyUTCzsSE/preview" allow="autoplay"></iframe>
+    </div>
+  </div>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+  <script src="assets/js/app.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
