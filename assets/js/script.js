@@ -1,114 +1,146 @@
-$(document).ready(function () {
+/* =====================================================================
+   SCRIPT.JS — Comportements interactifs du portfolio
+   Ce fichier est écrit pour être RÉSISTANT aux pannes de CDN : si une
+   librairie externe (jQuery, Typed.js, ScrollReveal, VanillaTilt,
+   EmailJS) ne se charge pas chez un visiteur (réseau lent, CDN
+   bloqué, ad-blocker...), SEULE la fonctionnalité qui en dépend est
+   désactivée — le reste du site continue de fonctionner normalement.
+   Avant cette version, une seule librairie manquante faisait planter
+   TOUT le script (page blanche pour le visiteur).
+===================================================================== */
 
-    $('#menu').click(function () {
-        $(this).toggleClass('fa-times');
-        $('.navbar').toggleClass('nav-toggle');
-    });
+// ===== jQuery : menu mobile, scroll spy, smooth scroll, formulaire de contact =====
+if (typeof $ !== "undefined" && typeof jQuery !== "undefined") {
 
-    $(window).on('scroll load', function () {
-        $('#menu').removeClass('fa-times');
-        $('.navbar').removeClass('nav-toggle');
+    $(document).ready(function () {
 
-        if (window.scrollY > 60) {
-            document.querySelector('#scroll-top').classList.add('active');
-        } else {
-            document.querySelector('#scroll-top').classList.remove('active');
-        }
-
-        if (window.scrollY > 30) {
-            document.querySelector('.header').classList.add('scrolled');
-        } else {
-            document.querySelector('.header').classList.remove('scrolled');
-        }
-
-        // scroll spy
-        $('section').each(function () {
-            let height = $(this).height();
-            let offset = $(this).offset().top - 200;
-            let top = $(window).scrollTop();
-            let id = $(this).attr('id');
-
-            if (top > offset && top < offset + height) {
-                $('.navbar ul li a').removeClass('active');
-                $('.navbar').find(`[href="#${id}"]`).addClass('active');
-            }
+        $('#menu').click(function () {
+            $(this).toggleClass('fa-times');
+            $('.navbar').toggleClass('nav-toggle');
         });
-    });
 
-    // smooth scrolling
-    $('a[href*="#"]').on('click', function (e) {
-        e.preventDefault();
-        $('html, body').animate({
-            scrollTop: $($(this).attr('href')).offset().top,
-        }, 500, 'linear')
-    });
+        $(window).on('scroll load', function () {
+            $('#menu').removeClass('fa-times');
+            $('.navbar').removeClass('nav-toggle');
 
-    // <!-- emailjs to mail contact form data -->
-    $("#contact-form").submit(function (event) {
-        emailjs.init({
-    publicKey: "pvAFYY_9NxS-fzFEm"
-});
+            if (window.scrollY > 60) {
+                document.querySelector('#scroll-top').classList.add('active');
+            } else {
+                document.querySelector('#scroll-top').classList.remove('active');
+            }
 
-        emailjs.sendForm('service_b0gfcva', 'template_qait78d', '#contact-form')
-            .then(function (response) {
-                console.log('SUCCESS!', response.status, response.text);
-                document.getElementById("contact-form").reset();
-                alert("Message envoyé avec succès !");
-            }, function (error) {
-                console.log('FAILED...', error);
-                alert("Échec de l'envoi. Réessayez !");
+            if (window.scrollY > 30) {
+                document.querySelector('.header').classList.add('scrolled');
+            } else {
+                document.querySelector('.header').classList.remove('scrolled');
+            }
+
+            // scroll spy
+            $('section').each(function () {
+                let height = $(this).height();
+                let offset = $(this).offset().top - 200;
+                let top = $(window).scrollTop();
+                let id = $(this).attr('id');
+
+                if (top > offset && top < offset + height) {
+                    $('.navbar ul li a').removeClass('active');
+                    $('.navbar').find(`[href="#${id}"]`).addClass('active');
+                }
             });
-        event.preventDefault();
+        });
+
+        // smooth scrolling
+        $('a[href*="#"]').on('click', function (e) {
+            e.preventDefault();
+            $('html, body').animate({
+                scrollTop: $($(this).attr('href')).offset().top,
+            }, 500, 'linear')
+        });
+
+        // <!-- emailjs to mail contact form data -->
+        $("#contact-form").submit(function (event) {
+            event.preventDefault();
+
+            if (typeof emailjs === "undefined") {
+                alert("Le service d'envoi de messages est momentanément indisponible. Réessaie un peu plus tard, ou écris-moi directement à borisigorbalima@gmail.com.");
+                return;
+            }
+
+            emailjs.init({
+                publicKey: "pvAFYY_9NxS-fzFEm"
+            });
+
+            emailjs.sendForm('service_b0gfcva', 'template_qait78d', '#contact-form')
+                .then(function (response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    document.getElementById("contact-form").reset();
+                    alert("Message envoyé avec succès !");
+                }, function (error) {
+                    console.log('FAILED...', error);
+                    alert("Échec de l'envoi. Réessayez !");
+                });
+        });
+
     });
 
-    // <!-- emailjs to mail contact form data -->
-
-});
-
-document.addEventListener('visibilitychange',
-    function () {
+    document.addEventListener('visibilitychange', function () {
         if (document.visibilityState === "visible") {
             document.title = "Portfolio | Boris Igor BALIMA";
             $("#favicon").attr("href", "assets/images/favicon.png");
-        }
-        else {
+        } else {
             document.title = "Come Back To Portfolio";
             $("#favicon").attr("href", "assets/images/favhand.png");
         }
     });
 
-    document.querySelectorAll('.voir-plus-btn').forEach(button => {
-        button.addEventListener('click', () => {
-            const details = button.nextElementSibling;
-            if (details.style.display === "block") {
+} else {
+    console.warn("[Portfolio] jQuery non chargé — menu mobile, scroll fluide et formulaire de contact désactivés.");
+}
+
+// Boutons "Voir plus / Voir moins" (vanilla JS pur, aucune dépendance)
+document.querySelectorAll('.voir-plus-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const details = button.nextElementSibling;
+        if (details.style.display === "block") {
             details.style.display = "none";
             button.textContent = "Voir plus";
-            } else {
+        } else {
             details.style.display = "block";
             button.textContent = "Voir moins";
-            }
-        });
-        });
-
-
-// <!-- typed js effect starts -->
-var typed = new Typed(".typing-text", {
-    strings: ["Front-End Developer", "Ingénieur IA", "Ingénieur IoT"],
-    loop: true,
-    typeSpeed: 50,
-    backSpeed: 25,
-    backDelay: 500,
+        }
+    });
 });
-// <!-- typed js effect ends -->
 
+// ===== Typed.js : effet machine à écrire du sous-titre =====
+if (typeof Typed !== "undefined") {
+    var typed = new Typed(".typing-text", {
+        strings: ["Front-End Developer", "Ingénieur IA", "Ingénieur IoT"],
+        loop: true,
+        typeSpeed: 50,
+        backSpeed: 25,
+        backDelay: 500,
+    });
+} else {
+    // Fallback simple : affiche un texte fixe si Typed.js est indisponible
+    document.querySelectorAll('.typing-text').forEach(el => {
+        el.textContent = "Front-End Developer";
+    });
+    console.warn("[Portfolio] Typed.js non chargé — texte fixe affiché à la place.");
+}
+
+/**
+ * Charge un fichier JSON (compétences ou projets). Ne dépend d'aucune
+ * librairie externe : le fetch natif fonctionne toujours.
+ * @param {"skills"|"projects"} type
+ */
 async function fetchData(type = "skills") {
-    let response
-    type === "skills" ?
-        response = await fetch("skills.json")
-        :
-       response = await fetch("projects/projects.json")
-    const data = await response.json();
-    return data;
+    const response = type === "skills"
+        ? await fetch("skills.json")
+        : await fetch("projects/projects.json");
+    if (!response.ok) {
+        throw new Error(`Impossible de charger ${type} (statut ${response.status})`);
+    }
+    return await response.json();
 }
 
 // ===== SKILLS : affichage en cartes catégorisées =====
@@ -129,7 +161,8 @@ function showSkills(categories) {
             html += `
             <div class="bar">
               <div class="info">
-                <img src="${skill.icon}" alt="${skill.name}" />
+                <img src="${skill.icon}" alt="${skill.name}"
+                     onerror="this.onerror=null; this.src='https://img.icons8.com/color/48/000000/around-the-globe.png'; this.style.opacity='0.5';" />
                 <span>${skill.name}</span>
               </div>
             </div>`;
@@ -183,36 +216,38 @@ function showProjects(projects) {
     });
 
     projectsContainer.innerHTML = projectHTML;
-
-    /* ===== SCROLL REVEAL ANIMATION ===== */
-    const srtop = ScrollReveal({
-        origin: 'top',
-        distance: '80px',
-        duration: 1000,
-        reset: true
-    });
-
-    /* SCROLL PROJECTS */
-    srtop.reveal('.work .flip-card', { interval: 200 });
-
+    safeReveal('.work .flip-card', { interval: 200 });
 }
 
+// Chargement des données dynamiques (compétences + projets).
+// En cas d'échec réseau, un message clair remplace le contenu au lieu
+// de laisser la section vide sans explication.
 fetchData().then(data => {
     showSkills(data);
+}).catch(err => {
+    console.error("[Portfolio] Erreur de chargement des compétences :", err);
+    const el = document.getElementById("skillsContainer");
+    if (el) el.innerHTML = "<p style='color:#fff;text-align:center;'>Impossible de charger les compétences pour le moment.</p>";
 });
 
 fetchData("projects").then(data => {
     showProjects(data);
+}).catch(err => {
+    console.error("[Portfolio] Erreur de chargement des projets :", err);
+    const el = document.querySelector("#work .box-container");
+    if (el) el.innerHTML = "<p style='color:#fff;text-align:center;'>Impossible de charger les projets pour le moment.</p>";
 });
 
-// <!-- tilt js effect starts -->
-VanillaTilt.init(document.querySelectorAll(".tilt"), {
-    max: 15,
-});
-// <!-- tilt js effect ends -->
+// ===== VanillaTilt : effet tilt 3D léger au survol =====
+if (typeof VanillaTilt !== "undefined") {
+    VanillaTilt.init(document.querySelectorAll(".tilt"), {
+        max: 15,
+    });
+} else {
+    console.warn("[Portfolio] VanillaTilt non chargé — effet tilt désactivé.");
+}
 
-
-// disable developer mode
+// Désactivation de quelques raccourcis d'inspection (aucune dépendance externe)
 document.onkeydown = function (e) {
     if (e.keyCode == 123) {
         return false;
@@ -231,49 +266,54 @@ document.onkeydown = function (e) {
     }
 }
 
+// ===== ScrollReveal : animations d'apparition au scroll =====
+// srtop reste "null" si la librairie est absente ; safeReveal() gère
+// ce cas partout où l'animation est utilisée, sans jamais planter.
+const srtop = (typeof ScrollReveal !== "undefined")
+    ? ScrollReveal({ origin: 'top', distance: '80px', duration: 1000, reset: true })
+    : null;
 
+function safeReveal(selector, options) {
+    if (srtop) {
+        srtop.reveal(selector, options);
+    }
+    // Si ScrollReveal est indisponible, les éléments restent simplement
+    // visibles par défaut (pas d'animation, mais rien de caché).
+}
 
-
-/* ===== SCROLL REVEAL ANIMATION ===== */
-const srtop = ScrollReveal({
-    origin: 'top',
-    distance: '80px',
-    duration: 1000,
-    reset: true
-});
+if (!srtop) {
+    console.warn("[Portfolio] ScrollReveal non chargé — animations d'apparition désactivées, contenu affiché normalement.");
+}
 
 /* SCROLL HOME */
-srtop.reveal('.home .content h3', { delay: 200 });
-srtop.reveal('.home-subtitle', { delay: 200 });
-srtop.reveal('.home-cta', { delay: 400 });
-srtop.reveal('.home-socials a', { interval: 200 });
+safeReveal('.home .content h3', { delay: 200 });
+safeReveal('.home-subtitle', { delay: 200 });
+safeReveal('.home-cta', { delay: 400 });
+safeReveal('.home-socials a', { interval: 200 });
 
 /* SCROLL ABOUT */
-srtop.reveal('.about .content h3', { delay: 200 });
-srtop.reveal('.about .content .tag', { delay: 200 });
-srtop.reveal('.about .content p', { delay: 200 });
-srtop.reveal('.about .content .box-container', { delay: 200 });
-srtop.reveal('.about .content .resumebtn', { delay: 200 });
-
+safeReveal('.about .content h3', { delay: 200 });
+safeReveal('.about .content .tag', { delay: 200 });
+safeReveal('.about .content p', { delay: 200 });
+safeReveal('.about .content .box-container', { delay: 200 });
+safeReveal('.about .content .resumebtn', { delay: 200 });
 
 /* SCROLL SKILLS */
-srtop.reveal('.skills .container', { interval: 200 });
-srtop.reveal('.skill-category', { interval: 200 });
+safeReveal('.skills .container', { interval: 200 });
+safeReveal('.skill-category', { interval: 200 });
 
 /* SCROLL EDUCATION */
-srtop.reveal('.education .box', { interval: 200 });
+safeReveal('.education .box', { interval: 200 });
 
 /* SCROLL EXPERIENCE */
-srtop.reveal('.experience .timeline', { delay: 400 });
-srtop.reveal('.experience .timeline .container', { interval: 400 });
+safeReveal('.experience .timeline', { delay: 400 });
+safeReveal('.experience .timeline .container', { interval: 400 });
 
 /* SCROLL CONTACT */
-srtop.reveal('.contact .container', { delay: 400 });
-srtop.reveal('.contact .container .form-group', { delay: 400 });
+safeReveal('.contact .container', { delay: 400 });
+safeReveal('.contact .container .form-group', { delay: 400 });
 
-
-
-// ===== Modal CV =====
+/* ===== Modal CV (vanilla JS pur, aucune dépendance) ===== */
 const cvModal = document.getElementById('cvModal');
 document.querySelectorAll('.open-cv-modal').forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -293,13 +333,11 @@ document.addEventListener('keydown', (e) => {
 });
 
 /* =====================================================================
-   APPARITION DOUCE DE LA PAGE AU CHARGEMENT
-   Le body démarre invisible (opacity:0, voir skills-categories.css)
-   et devient visible avec un fondu dès que le HTML est prêt, au lieu
-   d'un affichage "sec" instantané.
+   NOTE — Apparition de la page au chargement :
+   Ce n'est PLUS géré ici en JavaScript (c'était la cause de la page
+   blanche chez ton ami : si ce script plantait avant d'arriver ici,
+   le body restait invisible pour toujours). C'est maintenant une
+   simple animation CSS pure dans skills-categories.css, qui se joue
+   automatiquement dès que la page se peint, sans dépendre de la
+   réussite du JavaScript.
 ===================================================================== */
-document.addEventListener('DOMContentLoaded', () => {
-    requestAnimationFrame(() => {
-        document.body.classList.add('page-loaded');
-    });
-});

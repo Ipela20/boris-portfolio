@@ -9,7 +9,9 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts (chargées ICI uniquement — retirées du @import de
+       style.css pour éviter un double chargement qui ralentissait
+       le premier affichage) -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <!-- CSS du projet : ADAPTE le nom de fichier si besoin (dir assets/css) -->
@@ -360,16 +362,20 @@ as="image">
     </div>
   </div>
 
-  <!-- ===== SCRIPTS ===== -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-  <script src="assets/js/app.js"></script>
+  <!-- ===== SCRIPTS =====
+       "defer" : les scripts se téléchargent en parallèle SANS bloquer
+       l'affichage de la page, et s'exécutent dans l'ordre une fois le
+       HTML entièrement lu — plus fiable et plus rapide qu'un script
+       classique bloquant, surtout sur un réseau lent. -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
-  <script src="https://unpkg.com/scrollreveal"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js" defer></script>
+  <script src="https://unpkg.com/scrollreveal" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js" defer></script>
 
-  <script src="assets/js/script.js"></script>
+  <script src="assets/js/script.js" defer></script>
 </body>
 </html>

@@ -1,5 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap");
+/* Polices Google Fonts : chargées via <link> dans index.html
+   uniquement désormais (le double @import + <link> ralentissait
+   inutilement le premier affichage). */
 
 * {
   margin: 0;
@@ -976,7 +977,11 @@ padding:16px 30px;
 
 .flip-card:hover {
 
-    transform:translateY(-8px);
+    .flip-card:hover{
+
+    transform:translateY(-8px) scale(1.03);
+
+}
 
 }
 
